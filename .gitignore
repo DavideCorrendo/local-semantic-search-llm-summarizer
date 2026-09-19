@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+bin/
+include/
+lib/
+lib64/
+share/
+pyvenv.cfg
+
+# Project data — don't commit source PDFs or the built index
+pdfs/
+index.pkl
+
+# OS / editor junk
+.DS_Store
+.vscode/
+.idea/
