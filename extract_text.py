@@ -10,9 +10,15 @@ def extract_text(pdf_path):
                 text += page_text + "\n"
     return text
 
-# divide the text in chunks of 500 words
+# divide the text in chunks of 180 words
 # the overlap is used to not truncate the meaning of the sentences
-def chunk_text(text, chunk_size=500, overlap=50):
+#
+# NOTE: all-MiniLM-L6-v2 has a max_seq_length of 256 tokens. Chunks longer
+# than that get silently truncated by sentence-transformers during
+# encoding, meaning only the first part of the chunk is ever embedded.
+# 180 words stays safely under that limit even with OCR text that has
+# extra punctuation/tokens.
+def chunk_text(text, chunk_size=180, overlap=30):
     words = text.split()
     chunks = []
     start = 0

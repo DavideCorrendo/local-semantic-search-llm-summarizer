@@ -13,7 +13,6 @@ share/
 pyvenv.cfg
 
 # Project data — don't commit source PDFs or the built index
-pdfs/
 index.pkl
 
 # OS / editor junk
